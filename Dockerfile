@@ -13,6 +13,8 @@ LABEL com.github.actions.color="blue"
 
 RUN apk add --no-cache curl
 
+RUN apk update && apk add jq && rm -rf /var/cache/apk/*
+
 COPY LICENSE README.md /
 COPY entrypoint.sh /entrypoint.sh
 
